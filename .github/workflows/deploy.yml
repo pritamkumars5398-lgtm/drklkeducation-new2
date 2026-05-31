@@ -1,0 +1,77 @@
+name: 🚀 Auto-Deploy to InfinityFree on Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: 📤 Deploy Project
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: 🔍 Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up PHP
+      - name: 🐘 Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, intl, json, mysqli
+
+      # Step 3: Install dependencies (vendor/)
+      - name: 📦 Install Composer Dependencies
+        run: |
+          composer install --no-dev --optimize-autoloader --ignore-platform-reqs
+
+      # Step 4: Create secure production .env file
+      - name: ⚙️ Create Production .env
+        run: |
+          cat <<EOT > .env
+          #--------------------------------------------------------------------
+          # ENVIRONMENT
+          #--------------------------------------------------------------------
+          CI_ENVIRONMENT = production
+
+          #--------------------------------------------------------------------
+          # APP
+          #--------------------------------------------------------------------
+          app.baseURL = '${{ secrets.BASE_URL }}'
+          app.forceGlobalSecureRequests = false
+
+          #--------------------------------------------------------------------
+          # DATABASE (InfinityFree)
+          #--------------------------------------------------------------------
+          database.default.hostname = sql102.infinityfree.com
+          database.default.database = if0_42009009_drlkeducation
+          database.default.username = if0_42009009
+          database.default.password = dMQk9QkeTognvP
+          database.default.DBDriver = MySQLi
+          database.default.DBPrefix =
+          database.default.port = 3306
+          EOT
+
+      # Step 5: Sync all files using high-speed FTP Deploy
+      - name: 🚀 Sync Files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: /htdocs/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/tests/**
+            **/node_modules/**
+            **/phpunit.xml*
+            **/preload.php
+            **/spark
+            **/upload_vendor.sh
+            **/ftp_upload.sh
+            **/hostinger_deploy.sh
+            **/deploy.sh
