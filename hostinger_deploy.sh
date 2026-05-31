@@ -5,7 +5,7 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-LOCAL_DIR="/Users/rajesh/Documents/untitled folder/drlkeducation1"
+LOCAL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$LOCAL_DIR"
 
 clear

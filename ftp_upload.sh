@@ -5,7 +5,7 @@
 FTP_HOST="ftpupload.net"
 FTP_USER="if0_42009009"
 FTP_PASS="dMQk9QkeTognvP"
-LOCAL_DIR="/Users/rajesh/Documents/untitled folder/drlkeducation1"
+LOCAL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REMOTE_DIR="/htdocs"
 
 echo "🚀 Starting upload to InfinityFree..."
