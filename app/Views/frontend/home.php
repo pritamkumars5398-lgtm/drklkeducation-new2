@@ -765,7 +765,7 @@
             
             <div class="animated" data-animation="fadeInIn" data-animation-delay="300" style="margin-bottom: -5px;"> <!-- Prevent margin gap if any -->
                 <!-- Google Maps Embed: Fragron Infotech, Satellite/Hyper-realistic mode if possible -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14333.19794017387!2d78.3242636!3d25.8432321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397705df5e7aaabb%3A0xe54c46f39cd5ac!2sFragron%20Infotech!5e1!3m2!1sen!2sus!4v1711910000000!5m2!1sen!2sus" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1751.557655092392!2d77.38232066622739!3d28.596317352737987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef83d59327d9%3A0x726c2455b7d6a652!2sSector%2070%2C%20Noida%2C%20Uttar%20Pradesh%20201316!5e0!3m2!1sen!2sin!4v1780309897803!5m2!1sen!2sin" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
         <!-- /. LOCATE US ENDS

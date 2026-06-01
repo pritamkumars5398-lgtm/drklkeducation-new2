@@ -7,9 +7,7 @@
                 <div class="row footer-top-strip">
                     <div class="col-12 col-md-4 footer-contact-block mb-4 mb-md-0">
                         <h6><i class="las la-map-marker-alt" style="font-size:22px; color:#000;"></i> Office Address</h6>
-                        <p>State Office - ABCD  Nagar, Mova Vidhan Sabha, Road Raipur <br>
-                        456987  Sambhag Office - Hig-09, Near ABCD <br>
-                        Diagnosis Centre, Niharika Subhash Chowk Korba (c.g.)</p>
+                        <p>State Office - Noida Sector 70 Uttar Pradesh</p>
                     </div>
                     <div class="col-12 col-md-4 footer-contact-block mb-4 mb-md-0">
                         <h6><i class="las la-phone" style="font-size:20px; color:#000;"></i> Contact With Us</h6>
@@ -17,7 +15,7 @@
                     </div>
                     <div class="col-12 col-md-4 footer-contact-block">
                         <h6><i class="las la-envelope" style="font-size:22px; color:#000;"></i> Email ID</h6>
-                        <p>drlkeducation@gmail.com</p>
+                        <p>info@drlkfoundation.com</p>
                     </div>
                 </div>
                 

@@ -5104,6 +5104,19 @@ h4 {
 }
 
 @media (max-width: 767px) {
+  .top-bar-custom {
+        display: none;
+    }
+    .logo_img{height: 69px;}
+.logo_text{font-size: 18px;}
+
+.btn-donate-custom{    
+    width: 140px;
+    font-size: 12px;
+    padding: 5px !important;
+    margin: 0px;}
+
+    
   .testimonial-box {
     padding: 60px 30px 40px;
   }
@@ -6549,4 +6562,4 @@ h4 {
 
 .wa-float-btn.wa-left {
   left: 20px;
-}
+}
