@@ -93,8 +93,8 @@
 
                 <!-- Logo + Title -->
                 <div class="d-flex align-items-center logo-brand">
-                    <img src="<?= base_url('images/logo-03.png'); ?>" height="85" alt="Logo">
-                    <h3 class="ms-3 brand-text fw-bold mb-0">
+                    <img class="logo_img" src="<?= base_url('images/logo-03.png'); ?>" height="85" alt="Logo">
+                    <h3 class="ms-3 brand-text fw-bold mb-0 logo_text">
                         DRLK Education Foundation
                     </h3>
                 </div>

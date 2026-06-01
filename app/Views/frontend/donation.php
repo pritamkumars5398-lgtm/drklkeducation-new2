@@ -271,20 +271,23 @@
                         <h4 class="text-danger fw-bold mb-3" style="font-size:20px;">Payment Information</h4>
                         <div style="font-size: 13px; font-weight: 600; color: #333; line-height: 1.8;">
                             Bank Detail -<br>
-                            BANDHAN BANK<br>
-                            A/C No.- 10220016240591<br>
-                            IFSC Code - BDBL0001545
+                            Axis Bank<br>
+                            A/C No.- 925020020210298<br>
+                            IFSC Code - UTIB0003635
                         </div>
                     </div>
 
                     <div class="col-md-6 text-center text-md-end d-flex flex-column align-items-center align-items-md-end">
                         <div class="qr-container bg-white shadow-sm">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=getepay.mbandhan85014@bandhan&pn=KDS%20Seva%20Samiti" width="150" alt="QR Code">
-                            <div class="mt-1" style="font-size: 9px; font-weight: bold; overflow-wrap: break-word;">UPI: donpay.mbandhan89514</div>
+                            <img src="<?= base_url('imgs/qr-code-payment-crop.jpeg') ?>" width="150" alt="QR Code">
+                            <div class="mt-1" style="font-size: 9px; font-weight: bold; overflow-wrap: break-word;">UPI: 9302drlk@idfcbank</div>
                         </div>
-                        <button type="button" class="btn btn-primary mt-3 fw-semibold px-4 py-2" style="background-color: #6366f1; border-color: #6366f1; border-radius: 8px; font-size: 13px;">
+                        <a href="<?= base_url('imgs/qr-code-payment-crop.jpeg') ?>"
+   download="DRLK-UPI-QR-Code.jpeg"
+   class=""
+   style=""><button type="button" class="btn btn-primary mt-3 fw-semibold px-4 py-2" style="background-color: #6366f1; border-color: #6366f1; border-radius: 8px; font-size: 13px;">
                             <i class="bi bi-download me-1"></i> Download QR Code
-                        </button>
+                        </button></a>
                     </div>
 
                 </div>
