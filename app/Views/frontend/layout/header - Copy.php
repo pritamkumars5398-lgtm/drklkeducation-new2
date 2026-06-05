@@ -24,9 +24,6 @@
         <!-- ================= HEADER WRAPPER ================= -->
         <div class="sticky-top" style="z-index: 1050;">
 
-        <!-- ================= DESKTOP HEADER ================= -->
-        <div class="d-none d-lg-block">
-
         <!-- ================= TOP BAR ================= -->
         <div class="top-bar-custom py-2">
             <div class="container d-flex justify-content-between align-items-center gap-3 flex-wrap">
@@ -107,117 +104,12 @@
 
             </div>
         </div>
-        </div> <!-- End Desktop Header -->
 
-        <!-- ================= MOBILE HEADER ================= -->
-        <div class="d-block d-lg-none w-100">
-            <!-- Mobile Top Bar: Blue bg -->
-            <div class="py-1" style="background-color: #100D64;">
-                <div class="container d-flex justify-content-between align-items-center gap-2">
-                    <!-- Custom Mobile Translate Dropdown -->
-                    <div class="dropdown">
-                        <style>
-                            .mobile-lang-menu .dropdown-item:hover {
-                                background-color: #1a1580 !important;
-                                color: #ffffff !important;
-                            }
-                        </style>
-                        <button class="btn btn-danger dropdown-toggle" type="button" id="mobileLangDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #cc0000; border: 1px solid #fff; font-size: 13px; padding: 4px 8px; font-weight: bold; border-radius: 4px; color: white;">
-                            Select Language
-                        </button>
-                        <ul class="dropdown-menu shadow-sm mobile-lang-menu" aria-labelledby="mobileLangDropdown" style="background-color: #100D64; font-size: 14px; min-width: 160px; z-index: 1050; margin-top: 5px; border: 1px solid rgba(255,255,255,0.2);">
-                            <li><a class="dropdown-item text-white py-2" href="#" onclick="translateLanguage('en'); return false;">English</a></li>
-                            <li><a class="dropdown-item text-white py-2" href="#" onclick="translateLanguage('ar'); return false;">Arabic</a></li>
-                            <li><a class="dropdown-item text-white py-2" href="#" onclick="translateLanguage('bn'); return false;">Bengali</a></li>
-                            <li><a class="dropdown-item text-white py-2" href="#" onclick="translateLanguage('gu'); return false;">Gujarati</a></li>
-                            <li><a class="dropdown-item text-white py-2" href="#" onclick="translateLanguage('hi'); return false;">Hindi</a></li>
-                            <li><a class="dropdown-item text-white py-2" href="#" onclick="translateLanguage('kn'); return false;">Kannada</a></li>
-                            <li><a class="dropdown-item text-white py-2" href="#" onclick="translateLanguage('ml'); return false;">Malayalam</a></li>
-                            <li><a class="dropdown-item text-white py-2" href="#" onclick="translateLanguage('mr'); return false;">Marathi</a></li>
-                            <li><a class="dropdown-item text-white py-2" href="#" onclick="translateLanguage('pa'); return false;">Punjabi (Gurmukhi)</a></li>
-                            <li><a class="dropdown-item text-white py-2" href="#" onclick="translateLanguage('ta'); return false;">Tamil</a></li>
-                            <li><a class="dropdown-item text-white py-2" href="#" onclick="translateLanguage('te'); return false;">Telugu</a></li>
-                            <li><a class="dropdown-item text-white py-2" href="#" onclick="translateLanguage('ur'); return false;">Urdu</a></li>
-                        </ul>
-                    </div>
-                    
-                    <!-- News Ticker -->
-                    <div class="ticker-container flex-grow-1 px-2 py-1 align-items-center overflow-hidden" style="background: transparent; color: white;">
-                        <div class="ticker-text text-white marquee-text m-0" style="font-size: 14px;">
-                            <?php 
-                                $newsModel = new \App\Models\NewsUpdateModel();
-                                $allNews = $newsModel->where('status', 'active')->orderBy('id', 'DESC')->findAll();
-                                if(!empty($allNews)):
-                                    foreach($allNews as $news):
-                            ?>
-                                <span>
-                                    • 
-                                    <?php if(!empty($news['link'])): ?>
-                                        <a href="<?= $news['link'] ?>" target="_blank" class="text-white text-decoration-none"><?= esc($news['title']) ?></a>
-                                    <?php else: ?>
-                                        <?= esc($news['title']) ?>
-                                    <?php endif; ?>
-                                </span>
-                            <?php 
-                                    endforeach;
-                                else:
-                            ?>
-                                <span>• Welcome to DRLK Education Foundation | Serving for a better tomorrow.</span>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mobile Middle Bar: White bg -->
-            <div class="bg-white py-2 border-bottom">
-                <div class="container d-flex align-items-center justify-content-start">
-                    <!-- Hamburger Menu -->
-                    <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#menu" style="border: none; background: transparent; padding: 0; box-shadow: none;">
-                        <i class="bi bi-list" style="font-size: 2.2rem; color: #000;"></i>
-                    </button>
-                    
-                    <!-- Logo & Title -->
-                    <div class="d-flex align-items-center justify-content-start flex-grow-1">
-                        <img class="logo_img" src="<?= base_url('images/logo-03.png'); ?>" height="45" alt="Logo">
-                        <h5 class="ms-2 brand-text fw-bold mb-0 text-start" style="font-size: 14px; color: #ed1c24; line-height: 1.2; white-space: nowrap;">
-                            DRLK Education Foundation
-                        </h5>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mobile Bottom Bar: Blue bg -->
-            <div class="py-2" style="background-color: #100D64;">
-                <div class="container d-flex justify-content-between align-items-center">
-                    <!-- Social Icons -->
-                    <div class="d-flex gap-2">
-                        <a href="#" class="d-flex align-items-center justify-content-center bg-white rounded-circle" style="width: 32px; height: 32px; color: #ed1c24; text-decoration: none;">
-                            <i class="bi bi-facebook fs-6"></i>
-                        </a>
-                        <a href="#" class="d-flex align-items-center justify-content-center bg-white rounded-circle" style="width: 32px; height: 32px; color: #ed1c24; text-decoration: none;">
-                            <i class="bi bi-instagram fs-6"></i>
-                        </a>
-                        <a href="#" class="d-flex align-items-center justify-content-center bg-white rounded-circle" style="width: 32px; height: 32px; color: #ed1c24; text-decoration: none;">
-                            <i class="bi bi-youtube fs-6"></i>
-                        </a>
-                        <a href="#" class="d-flex align-items-center justify-content-center bg-white rounded-circle" style="width: 32px; height: 32px; color: #ed1c24; text-decoration: none;">
-                            <i class="bi bi-twitter fs-6"></i>
-                        </a>
-                    </div>
-
-                    <!-- Donate Button -->
-                    <a href="<?= base_url('donation') ?>" class="btn d-flex align-items-center gap-1 px-3 py-1 fw-bold text-white shadow-sm" style="background-color: #ed1c24; border-radius: 4px; font-size: 14px; border: none;">
-                        Donate Us
-                    </a>
-                </div>
-            </div>
-        </div>
         
         <!-- ================= NAVBAR ================= -->
         <nav class="navbar navbar-expand-lg navbar-custom navbar-dark py-0" style="padding-top: 0; padding-bottom: 0;">
             <div class="container">
-                <button class="navbar-toggler my-2 d-none" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <button class="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -291,16 +183,7 @@
         <!-- Google Translate Script -->
         <script type="text/javascript">
             function googleTranslateElementInit() {
-                if(document.getElementById('google_translate_element')) {
-                    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-                }
-            }
-            
-            function translateLanguage(lang) {
-                // Reliable method using cookies and reload to avoid iframe DOM issues
-                document.cookie = "googtrans=/en/" + lang + "; path=/";
-                document.cookie = "googtrans=/en/" + lang + "; path=/; domain=" + location.hostname;
-                window.location.reload();
+                new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
             }
         </script>
         <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
