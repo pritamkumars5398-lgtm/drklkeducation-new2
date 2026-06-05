@@ -11,22 +11,15 @@
         <title>DRLK Education Foundation</title>
     </head>
     <body data-bs-spy="scroll" data-bs-target="#navigation">
-        <!-- PRELOADER STARTS
-            ========================================================================= -->
+        <!-- PRELOADER STARTS -->
         <div id="main-preloader" class="main-preloader semi-dark-background">
-            <div class="main-preloader-inner center">
-                <h1 class="preloader-percentage center">
-                    <span class="preloader-percentage-text">0</span> <!-- Show Percentage Number -->
-                    <span class="percentage">%</span>
-                </h1>
-                <div class="preloader-bar-outer">
-                    <div class="preloader-bar"></div>
-                    <!-- Percentage Precess Bar -->
-                </div>
+            
+            <div class="loader-wrapper">
+                <img src="<?= base_url('imgs/loader-DRLK.gif'); ?>" alt="Loading..." class="loader-gif">
             </div>
+
         </div>
-        <!-- /.. PRELOADER ENDS
-            ========================================================================= -->
+        <!-- PRELOADER ENDS -->
 
         <!-- ================= HEADER WRAPPER ================= -->
         <div class="sticky-top" style="z-index: 1050;">
