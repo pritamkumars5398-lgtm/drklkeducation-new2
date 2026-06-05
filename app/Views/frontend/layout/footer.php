@@ -318,7 +318,9 @@
         <!-- CONTACT FORM JS -->
         <script src="<?= base_url('js/contact-form/contact-form.js'); ?>"></script>
         <!-- CUSTOM JS -->
-        <script src="<?= base_url('js/script.js'); ?>"></script>
+        <script src="<?= base_url('js/script.js'); ?>">
+            
+        </script>
                 window.addEventListener("load", function () {
 
             document.getElementById("main-preloader").style.display = "none";
